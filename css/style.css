@@ -1,0 +1,196 @@
+/* Paleta de Cores */
+:root {
+    --cor-principal: #3498db; /* Azul vibrante */
+    --cor-secundaria: #2980b9; /* Azul escuro para hover */
+    --cor-fundo: #ecf0f1; /* Cinza claro para o fundo */
+    --cor-texto: #333333; /* Cinza escuro para o texto */
+    --cor-card: #ffffff; /* Branco para as seções (boxes) */
+}
+
+/* 2.2 Requisitos de Estilo CSS */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--cor-fundo); /* Uso do seletor body e cor de fundo */
+    color: var(--cor-texto);
+}
+
+/* Navegação e Layout do Menu (Flexbox) */
+header {
+    background: var(--cor-principal);
+    color: var(--cor-card);
+    padding: 15px 20px;
+    display: flex; /* Uso de Flexbox para o header */
+    justify-content: space-between; /* Espaçamento entre o título e a navegação */
+    align-items: center; /* Alinha verticalmente */
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Uso de Flexbox para o menu */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--cor-card);
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Cor de destaque ao passar o mouse */
+    /* Uso do seletor :hover em pelo menos um elemento (links) */
+}
+
+/* Layout das Seções */
+main {
+    max-width: 1000px;
+    margin: 20px auto; /* Centraliza o conteúdo */
+}
+
+section {
+    background: var(--cor-card);
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout da Seção "Sobre Mim" (Flexbox) */
+.flex-container {
+    display: flex; /* Uso de Flexbox para organizar a seção */
+    gap: 30px; /* Espaço entre o texto e a imagem */
+    align-items: center; /* Alinha verticalmente no centro */
+    flex-wrap: wrap; /* Quebra de linha em telas pequenas */
+}
+
+.flex-container div {
+    flex: 1; /* Permite que a div ocupe o espaço restante */
+    min-width: 300px; /* Garante que não fique muito estreito */
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Garante que a imagem preencha a área sem distorcer */
+    border-radius: 50%; /* Imagem circular */
+    border: 5px solid var(--cor-principal);
+    /* Imagens utilizadas no site (aplicação correta da imagem) */
+}
+
+figcaption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+    color: #666;
+}
+
+/* Estilização da Tabela (Model Box) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    /* Aplicação correta do box model (padding, borda) */
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--cor-principal);
+    color: var(--cor-card);
+}
+
+/* Formulário de Contato */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box; /* O padding não aumenta a largura total */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button[type="submit"] {
+    background: var(--cor-secundaria);
+    color: var(--cor-card);
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: var(--cor-principal);
+}
+
+/* Rodapé (Footer) */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--cor-texto);
+    color: var(--cor-fundo);
+    margin-top: 20px;
+    /* Uso do posicionamento para organizar elementos (relative no footer para controle) */
+    position: relative; 
+}
+
+footer a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--cor-card);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .flex-container div {
+        min-width: unset;
+    }
+}
